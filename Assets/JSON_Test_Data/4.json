@@ -1,0 +1,20 @@
+{
+  "id": "4",
+  "lastUpdate": 1.22,
+  "mapId": "0",
+  "name": "Clyde",
+  "orientation": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "pixelPosition": {
+    "x": null,
+    "y": null
+  },
+  "position": {
+    "x": 11.0,
+    "y": 0.0,
+    "z": 29.0
+  }
+}

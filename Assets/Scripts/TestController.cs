@@ -6,7 +6,7 @@ public class TestController : MonoBehaviour
     public async void TestGet()
     {
         var url = "https://jsonplaceholder.typicode.com/todos/1";
-
+        
         var httpClient = new HappyHttpClient(new JsonSerializationOption());
         var result = await httpClient.Get<User>(url);
     }

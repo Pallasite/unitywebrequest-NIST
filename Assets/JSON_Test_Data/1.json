@@ -1,0 +1,20 @@
+{
+  "id": "1",
+  "lastUpdate": 2.22,
+  "mapId": "1",
+  "name": "Blinky",
+  "orientation": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "pixelPosition": {
+    "x": null,
+    "y": null
+  },
+  "position": {
+    "x": 10.0,
+    "y": 0.0,
+    "z": 5.0
+  }
+}

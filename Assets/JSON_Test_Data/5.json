@@ -1,0 +1,20 @@
+{
+  "id": "5",
+  "lastUpdate": 1.22,
+  "mapId": "0",
+  "name": "Blimpy",
+  "orientation": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "pixelPosition": {
+    "x": null,
+    "y": null
+  },
+  "position": {
+    "x": 35.0,
+    "y": 0.0,
+    "z": 11.0
+  }
+}
