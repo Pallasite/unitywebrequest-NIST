@@ -4,13 +4,15 @@ using UnityEngine;
 
 //This class will pull a random pokemon from the api and use its base experience and weight as coordinates on the map for spawning
 
-public class TestControllerParaUnity : MonoBehaviour
+public class TestControllerLocalFiles : MonoBehaviour
 {
     public GameObject map_marker;
     public string local_path;
     public string local_output_path;
     public int object_index = 0;
-   
+
+    public bool echo_to_debug_log = true;
+
     [ContextMenu("Test Get")]
     public async void TestGet()
     {
@@ -19,25 +21,26 @@ public class TestControllerParaUnity : MonoBehaviour
         // http://halo05.wings.cs.wisc.edu:5000/headsets/0
 
         var api_base_url = local_path + object_index + ".json";
-
+        
         var url = api_base_url;
                 
         var httpClient = new HappyHttpClient(new JsonSerializationOption());
         var result = await httpClient.Get<HoloQube>(url);
-        //How to access the public elements of this class iterativlye?
-        //Is this possible? Just use . sytax?
-        //To string or a sort of array? I don't understand JSON parsing yet
-        Debug.Log(result);
-        Debug.Log($"Name: {result.name}");
-        Debug.Log($"ID: {result.id}");
-        Debug.Log($"Position: {result.position}");
-        Debug.Log($"Orientation: {result.orientation}");
-        Debug.Log($"Update: {result.lastUpdate}");
 
-        //Cube position
-        //int x_spot = result.base_experience % 50;
-        //int z_spot = result.weight % 50;
-
+        //Verbose output of JSON to log
+        if (echo_to_debug_log)
+        {
+            Debug.Log("Request to location:" + api_base_url);
+            //How to access the public elements of this class iterativlye?
+            //Is this possible? Just use . sytax?
+            //To string or a sort of array? I don't understand JSON parsing yet
+            Debug.Log(result);
+            Debug.Log($"Name: {result.name}");
+            Debug.Log($"ID: {result.id}");
+            Debug.Log($"Position: {result.position}");
+            Debug.Log($"Orientation: {result.orientation}");
+            Debug.Log($"Update: {result.lastUpdate}");
+        }
 
         //Instantiate a new cube
         var clone = Instantiate(map_marker);

@@ -32,12 +32,13 @@ public class ID_Color : MonoBehaviour
             // that didn't work beacuse i need to edi the mesh renderer
 
             //Get material from table and assign it to the first material of the parent's mesh renderer
-            Material id_cube_color = material_table[id_number%(array_size+1)];
+            //I think the index math is wrong, I was trying to wrap the index around, but I'm not sure
+            Material id_cube_color = material_table[(id_number)%(array_size)];
 
             MeshRenderer cube_mr = holo_marker.GetComponent<MeshRenderer>();
             cube_mr.material = id_cube_color;
 
-            Debug.Log("ID index key " + id_number);
+            //Debug.Log("ID index key " + id_number);
         }
         else
         {

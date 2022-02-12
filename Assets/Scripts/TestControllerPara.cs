@@ -7,6 +7,8 @@ public class TestControllerPara : MonoBehaviour
 {
     public GameObject map_marker;
     public string pub_base_url;
+
+    public bool echo_to_debug_log = true;
     
     [ContextMenu("Test Get")]
     public async void TestGet()
@@ -25,25 +27,20 @@ public class TestControllerPara : MonoBehaviour
         
         var httpClient = new HappyHttpClient(new JsonSerializationOption());
         var result = await httpClient.Get<HoloQube>(url);
-        //How to access the public elements of this class iterativlye?
-        //Is this possible? Just use . sytax?
-        //To string or a sort of array? I don't understand JSON parsing yet
-        Debug.Log(result);
-        Debug.Log($"Name: {result.name}");
-        Debug.Log($"ID: {result.id}");
-        Debug.Log($"Update: {result.lastUpdate}");
-
-        Debug.Log(result);
-        Debug.Log($"Name: {result.name}");
-        Debug.Log($"ID: {result.id}");
-        Debug.Log($"Position: {result.position}");
-        Debug.Log($"Orientation: {result.orientation}");
-        Debug.Log($"Update: {result.lastUpdate}");
-
-        //Cube position
-        //int x_spot = result.base_experience % 50;
-        //int z_spot = result.weight % 50;
-
+        
+        //Verbose output of JSON to log
+        if (echo_to_debug_log)
+        {
+            //How to access the public elements of this class iterativlye?
+            //Is this possible? Just use . sytax?
+            //To string or a sort of array? I don't understand JSON parsing yet
+            Debug.Log(result);
+            Debug.Log($"Name: {result.name}");
+            Debug.Log($"ID: {result.id}");
+            Debug.Log($"Position: {result.position}");
+            Debug.Log($"Orientation: {result.orientation}");
+            Debug.Log($"Update: {result.lastUpdate}");
+        }
 
         //Instantiate a new cube
         var clone = Instantiate(map_marker);
@@ -61,15 +58,5 @@ public class TestControllerPara : MonoBehaviour
         clone.GetComponent<ToJSONString>().orientation = result.orientation;
         clone.GetComponent<ToJSONString>().name_marker = result.name;
         clone.GetComponent<ToJSONString>().last_update = result.lastUpdate;
-
-
-
     }
-
-    [ContextMenu("Test Post")]
-    public async void TestPost()
-    {
-        Debug.Log("Test");
-    }
-
 }

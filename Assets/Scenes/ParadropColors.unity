@@ -630,8 +630,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c1c22ab34a0c15408f2d492d7c035de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mover_cube: {fileID: 1840399404}
-  pub_base_url: https://pokeapi.co/api/v2/pokemon/
 --- !u!4 &1278781882
 Transform:
   m_ObjectHideFlags: 0
@@ -678,6 +676,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   map_marker: {fileID: 560388075}
   pub_base_url: http://halo05.wings.cs.wisc.edu:5000/headsets/0
+  echo_to_debug_log: 1
 --- !u!4 &1680138918
 Transform:
   m_ObjectHideFlags: 0
@@ -705,9 +704,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   map_marker: {fileID: 560388075}
-  local_path: C:\Users\pallasite\Documents\GitHub\unitywebrequest-tutorial\Assets\JSON_Test_Data\
-  local_output_path: C:\Users\pallasite\Documents\GitHub\unitywebrequest-tutorial\Assets\JSON_Test_Data\LocalOutput
+  local_path: C:\Users\bsprecher\Documents\unitywebrequest-NIST\Assets\JSON_Test_Data\
+  local_output_path: C:\Users\bsprecher\Documents\unitywebrequest-NIST\Assets\JSON_Test_Data\LocalOutput
   object_index: 1
+  echo_to_debug_log: 1
 --- !u!1 &1840399404
 GameObject:
   m_ObjectHideFlags: 0
